@@ -34,6 +34,11 @@ object AppModule {
     fun provideEmployeeRepository(firestore: FirebaseFirestore): EmployeeRepository =
         FirestoreEmployeeRepository(firestore)
 
+    @Provides
+    @Singleton
+    fun provideUserRepository(firestore: FirebaseFirestore): UserRepository =
+        FirestoreUserRepository(firestore)
+
     // Use Cases
     @Provides
     fun provideCheckInTruckUseCase(
